@@ -22,7 +22,7 @@ class Game
     pos = get_pos until valid_pos?(pos)
     action = get_action
     play_move(pos, action)
-    update_board(pos)
+    update_board(pos) if action == 1
     game_over?(bomb?(pos), action)
   end
 

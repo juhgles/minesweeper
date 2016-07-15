@@ -28,15 +28,15 @@ class Board
     @grid.each do |row|
       puts
       row.each do |tile|
-        if !tile.up
+        if tile.flagged == true
+          print "F"
+        elsif !tile.up
           print "*"
         elsif !tile.bomb && !tile.adj_bombs
           print "o"
           #p breadth recursive function
         elsif !tile.bomb
           print tile.adj_bombs
-        elsif tile.flagged
-          print "F"
         else
           print "X"
           #game over
